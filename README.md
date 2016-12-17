@@ -1,1 +1,1 @@
-# CPG-for-the-control-of-robotic-systems
+# CPG for The Control of Robotic Systems
