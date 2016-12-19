@@ -33,5 +33,4 @@ function [r,tempo] = osciladores(a,b,h,amplitudeMax,ampliduteAlvo,condicaoInicia
 endfunction
 amplitudeMax = [0.20944,0.698132,0.698132];
 amplitudeAlvo = [2, 2, 2]
-[r,tempo] = osciladores(0,15,0.05,amplitudeMax,amplitudeAlvo,0,0,3);
-
+[r,tempo] = osciladores(0,5,0.05,amplitudeMax,amplitudeAlvo,0,0,3);
