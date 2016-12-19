@@ -28,7 +28,7 @@ endfunction
 function [fi,tempo] = phase(a,b,h,cOnda,r,n)
     tempo = a:h:b // vetor tempo de 0 a 15 com h = 0.05
     m = length(tempo); // pegando tamanho do vetor tempo
-    fi = zeros(m,n); // criando uma matriz fi.
+    fi = zeros(m,n) ; // criando uma matriz fi.
     for i=1:n // percorrendo as colunas
         for j = 1:m-1 //percorrendo as linhas
             k = f(cOnda,r,fi(:,i),n) // definindo a função do passo anterior  
@@ -36,4 +36,5 @@ function [fi,tempo] = phase(a,b,h,cOnda,r,n)
         end
     end 
 endfunction
-
+cOnda = [10 10 10]
+[fi,tempo] = phase(0,5,0.05,cOnda,r,3)
