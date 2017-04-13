@@ -1,2 +1,2 @@
 ### Central Pattern Generators for the control of robotic systems 
-(Geradores de padrões centrais Para o controle de sistemas robóticos)
+(Geradores de padrões centrais para o controle de sistemas robóticos)
