@@ -1,1 +1,1 @@
-# CPG for The Control of Robotic Systems
+# Central Pattern Generators for the control of robotic systems ( Geradores de padrões centrais Para o controle de sistemas robóticos)
