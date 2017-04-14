@@ -60,18 +60,18 @@ endfunction
 //Um osciladores correspondente ao numero de osciladores
 //Um a correspondente ao inicio do periodo do calculo do tempo.
 //Um b correspondente ao fim do periodo do calculo do tempo.
-//Um h correspondente ao tamanho do passo do intervalo a - b
+//Um  correspondente ao tamanho do passo do intervalo a - b
 //A função devolve uma matriz 3xn, que corresponde a amplitude de todos os osciladores em todo o espaço de tempo definido.
-function r = amplitude(ar,R,r0,m0,osciladores,a,b,h)
+function r = amplitude(ar,R,r0,m0,osciladores,a,b,passo)
     r = r0;
     m = m0;
-    t = a:h:b;
+    t = a:passo:b;
     n = length(t)
     for i = 1:n-1
         kdm = g(ar,R,r(i,:),m(i,:),osciladores);
         km = f(m(i,:));
-        m(i+1,:) = m(i,:) + kdm*h;
-        r(i+1,:) = r(i,:) + km*h;
+        m(i+1,:) = m(i,:) + kdm*passo;
+        r(i+1,:) = r(i,:) + km*passo;
     end
 endfunction
 
@@ -85,19 +85,19 @@ endfunction
 // A função devolve uma matriz 1xn onde n corresponde ao numero de osciladores.
 //Um a correspondente ao inicio do periodo do calculo do tempo.
 //Um b correspondente ao fim do periodo do calculo do tempo.
-//Um h correspondente ao tamanho do passo do intervalo a - b
+//Um passo correspondente ao tamanho do passo do intervalo a - b
 // a função devolve uma matriz nx3 onde, n é o numero de osciladores
-function FI = phase(w, wij,r,fi0,phi,osciladores,a,b,h)
+function FI = phase(w, wij,r,fi0,phi,osciladores,a,b,passo)
     FI = fi0;
-    t = a:h:b;
+    t = a:passo:b;
     n = length(t);
     for i = 1:n-1
         kdphi = h(w, wij,r(i,:),FI(i,:),phi,osciladores);
-        FI(i+1,:) = FI(i,:) + kdphi*h;
+        FI(i+1,:) = FI(i,:) + kdphi*passo;
     end
 endfunction
 
-R  = [0.698132    0.20944    0.698132];
+R  = [0.698132    0.20944    -0.698132];
 r0 = [0 0 0];
 m0 = [0 0 0];
 fi0 = [0 0 0];
