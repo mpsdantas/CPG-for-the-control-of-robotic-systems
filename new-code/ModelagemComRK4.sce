@@ -150,9 +150,9 @@ function FI = phase(w, wij,r,fi0,phi,osciladores,a,b,passo)
     end
 endfunction
 
-function tetha = angulos(FI,r,n)
+function tetha = angulos(FI,r,x,n)
     for i=1:n
-        tetha(:,i) = r(:,i).*sin(FI(:,i)); 
+        tetha(:,i) =x(:,i)+r(:,i).*sin(FI(:,i)); 
     end
 endfunction
 R  = [0.698132    0.20944    -0.698132];
