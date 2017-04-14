@@ -149,7 +149,13 @@ function FI = phase(w, wij,r,fi0,phi,osciladores,a,b,passo)
         FI(i+1,:) = FI(i,:) + kdphi*passo;
     end
 endfunction
-R  = [0.698132    0.20944    0.698132];
+
+function tetha = v(FI,r,n)
+    for i=1:n
+        tetha(:,i) = r(:,i).*sin(FI(:,i)); 
+    end
+endfunction
+R  = [0.698132    0.20944    -0.698132];
 r0 = [0 0 0];
 m0 = [0 0 0];
 X  = [0.698132    0.20944    0.698132];
