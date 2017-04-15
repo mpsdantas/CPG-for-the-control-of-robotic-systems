@@ -164,12 +164,12 @@ exe0 = [0 0 0 0];
 fi0 = [0 0 0 0];
 ar = 2;
 ax = 2;
-w  = [5 5 5 5]
-wij= [0 0.5 0.5 0.5; 0.5 0 0.5 0.5; 0.5 0.5 0 0.5; 0.5 0.5 0.5 0];
-phi = [0 0 0 0; 0 0 0 0; 0 0 0 0; 0 0 0 0];
-x = deslocamento(ax,X,x0,exe0,4,0,20,0.0005);
-r = amplitude(ar,R,r0,m0,4,0,20,0.0005);
-FI = phase(w, wij,r,fi0,phi,4,0,20,0.0005);
+w  = [10 10 10 10]
+wij= gerarMatrizW(4);
+phi = zeros(4,4); // Matriz do deslocamento, exemplo se tivermos 12 osciladores teremos que ter 12 linhas e 12 colunas, 6, 6 linhas e 6 colunas.
+x = deslocamento(ax,X,x0,exe0,4,0,5,0.01);
+r = amplitude(ar,R,r0,m0,4,0,5,0.01);
+FI = phase(w, wij,r,fi0,phi,4,0,5,0.01);
 tetha = angulos(FI,r,x,4);
-t = 0:0.0005:20; 
-plot(t,tetha)
+t = 0:0.01:5; 
+plot(t,tetha);

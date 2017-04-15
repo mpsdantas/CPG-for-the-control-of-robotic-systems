@@ -143,22 +143,22 @@ function tetha = angulos(FI,r,x,n)
         tetha(:,i) = x(:,i)+r(:,i).*sin(FI(:,i)); 
     end
 endfunction
-R  = [0.698132    0.20944    -0.698132 0.33233 0.90223 -0.454443 0.44434 0.3422 -0.2223 0.3773 0.992 -0.56334];
-r0 = [0 0 0 0 0 0 0 0 0 0 0 0];
-m0 = [0 0 0 0 0 0 0 0 0 0 0 0];
-X  = [0 0 0 0 0 0 0 0 0 0 0 0];
-x0 = [0 0 0 0 0 0 0 0 0 0 0 0];
-exe0 = [0 0 0 0 0 0 0 0 0 0 0 0];
-fi0 = [0 0 0 0 0 0 0 0 0 0 0 0];
+R  = [0.20944 0.698132 -0.698132];
+r0 = [0 0 0];
+m0 = [0 0 0];
+X  = [0 0 0];
+x0 = [0 0 0];
+exe0 = [0 0 0];
+fi0 = [0 0 0];
 ar = 2;
 ax = 2;
-w  = [5 5 5 5 5 5 5 5 5 5 5 5]
-wij= gerarMatrizW(12);
-phi = zeros(12,12); // Matriz do deslocamento, exemplo se tivermos 12 osciladores teremos que ter 12 linhas e 12 colunas, 6, 6 linhas e 6 colunas.
-x = deslocamento(ax,X,x0,exe0,12,0,20,0.0005);
-r = amplitude(ar,R,r0,m0,12,0,20,0.0005);
-FI = phase(w, wij,r,fi0,phi,12,0,20,0.0005);
-tetha = angulos(FI,r,x,12);
-t = 0:0.0005:20; 
+w  = [10 10 10]
+wij= [0 0 0;0 0 0;0.5 0 0]
+phi = [0 0 0;0 0 0;0 0 0] // Matriz do deslocamento, exemplo se tivermos 12 osciladores teremos que ter 12 linhas e 12 colunas, 6, 6 linhas e 6 colunas.
+x = deslocamento(ax,X,x0,exe0,3,0,25,0.01);
+r = amplitude(ar,R,r0,m0,3,0,25,0.01);
+FI = phase(w, wij,r,fi0,phi,3,0,25,0.01);
+tetha = angulos(FI,r,x,3);
+t = 0:0.01:25; 
 plot(t,tetha);
 
