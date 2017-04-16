@@ -1,5 +1,5 @@
 tInicio = 0;  // tempo de incio da simulação 
-tFim = 10; // tempo final da simulação 
+tFim = 25; // tempo final da simulação 
 osciladores = 3; // número de osciladores 
 passo = 0.01; // intervalo de tempo entre cada interação da simulação 
 
@@ -7,7 +7,7 @@ t = tInicio:passo:tFim
 n = length(t);
 
 
-R  = [0.20944 0.698132 0.6132];
+R  = [0.40944 0.29132 0.29132];
 global r;
 r = zeros(n,osciladores);
 global m;
@@ -26,7 +26,7 @@ ar = 2;
 ax = 2;
 w  = [10 10 10]
 wij= [0 0 0;0.5 0 0;0.5 0 0]
-phi = [0 0 0;0 0 0;0 0 0] // Matriz do deslocamento, exemplo se tivermos 12 osciladores teremos que ter 12 linhas e 12 colunas, 6, 6 linhas e 6 colunas.
+phi = [0 0 0;3.14/2 0 0;-3.14/2 0 0] // Matriz do deslocamento, exemplo se tivermos 12 osciladores teremos que ter 12 linhas e 12 colunas, 6, 6 linhas e 6 colunas.
 
 
 //A seguinte função recebe uma matriz dr 1xn.
@@ -107,16 +107,11 @@ endfunction
 //Um b correspondente ao fim do periodo do calculo do tempo.
 //Um  correspondente ao tamanho do passo do intervalo a - b
 //A função devolve uma matriz 3xn, que corresponde a amplitude de todos os osciladores em todo o espaço de tempo definido.
-function [x,exe] = deslocamento(ax,X,x,exe,osciladores,a,b,passo,i)
-    //x = x0;
-    //exe = exe0;
-    //t = a:passo:b;
-    //n = length(t)
-    //for i = 1:n-1
-        kdexe = v(ax,X,x(i,:),exe(i,:),osciladores);
-        kexe = p(exe(i,:));
-        exe(i+1,:) = exe(i,:) + kdexe*passo;
-        x(i+1,:) = x(i,:) + kexe*passo;
+function [x,exe] = deslocamento(ax,X,x,exe,osciladores,i)
+    kdexe = v(ax,X,x(i,:),exe(i,:),osciladores);
+    kexe = p(exe(i,:));
+    exe(i+1,:) = exe(i,:) + kdexe*passo;
+    x(i+1,:) = x(i,:) + kexe*passo;
     //end
 endfunction
 //A seguinte função recebe: 
@@ -129,19 +124,11 @@ endfunction
 //Um b correspondente ao fim do periodo do calculo do tempo.
 //Um "passo" correspondente ao tamanho do passo do intervalo a - b
 //A função devolve uma matriz 3xn, que corresponde ao deslocamento de todos os osciladores em todo o espaço de tempo definido.
-function [r,m] = amplitude(ar,R,r,m,osciladores,a,b,passo,i)
-    //r = r0;
-    //m = m0;
-    //t = a:passo:b;
-    //n = length(t)
-    //for i = 1:n-1
-        kdm = g(ar,R,r(i,:),m(i,:),osciladores);
-        km = f(m(i,:));
-        m(i+1,:) = m(i,:) + kdm*passo;
-        r(i+1,:) = r(i,:) + km*passo;
-        //r(i+1,1) = r(i,1) + 1;
-        //disp(r(i+1,1))
-    //end
+function [r,m] = amplitude(ar,R,r,m,osciladores,i)
+    kdm = g(ar,R,r(i,:),m(i,:),osciladores);
+    km = f(m(i,:));
+    m(i+1,:) = m(i,:) + kdm*passo;
+    r(i+1,:) = r(i,:) + km*passo;
 endfunction
 
 //A seguinte função recebe:
@@ -156,12 +143,7 @@ endfunction
 //Um b correspondente ao fim do periodo do calculo do tempo.
 //Um passo correspondente ao tamanho do passo do intervalo a - b
 // a função devolve uma matriz nx3 onde, n é o numero de osciladores
-function FI = phase(w, wij,r,FI,phi,osciladores,a,b,passo,i)
-    //FI = fi0;
-    //t = a:passo:b;
-    //n = length(t);
-    //for i = 1:n-1
-    
+function FI = phase(w, wij,r,FI,phi,osciladores,i)
          // h 
         dphi = zeros(1,osciladores)
         for oi=1:osciladores
@@ -190,15 +172,14 @@ endfunction
 
 
 
-
 // calcula os valores das variáveis do sistema para cada iteração i 
 for i = 1:n-1 
-    [x,exe] = deslocamento(ax,X,x,exe,osciladores,tInicio,tFim,passo,i);
-    [r,m] = amplitude(ar,R,r,m,osciladores,tInicio,tFim,passo,i);
-    FI = phase(w, wij,r,FI,phi,osciladores,tInicio,tFim,passo,i);
+    [x,exe] = deslocamento(ax,X,x,exe,osciladores,i);
+    [r,m] = amplitude(ar,R,r,m,osciladores,i);
+    FI = phase(w, wij,r,FI,phi,osciladores,i);
      
 end
- tetha = angulos(tetha, FI,r,x,osciladores);
+tetha = angulos(tetha, FI,r,x,osciladores);
 
 tp = tInicio:passo:tFim 
 plot(tp,tetha);
