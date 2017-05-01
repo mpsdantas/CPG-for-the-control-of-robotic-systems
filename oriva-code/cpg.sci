@@ -164,7 +164,7 @@ endfunction
 //x  uma matriz nx3, onde n é o numero de linhas calculada a partir de um metodo númerico.
 //n numero de osciladores.
 // a função devolve os angulos de todos os osciladores 
-function tetha = angulos(tetha, FI,r,x,n)
+function tetha = angulos(FI,r,x,n)
     for i=1:n
         tetha(:,i) = x(:,i)+r(:,i).*sin(FI(:,i)); 
     end
@@ -179,7 +179,7 @@ for i = 1:n-1
     FI = phase(w, wij,r,FI,phi,osciladores,i);
      
 end
-tetha = angulos(tetha, FI,r,x,osciladores);
+tetha = angulos(FI,r,x,osciladores);
 
 tp = tInicio:passo:tFim 
 plot(tp,tetha);

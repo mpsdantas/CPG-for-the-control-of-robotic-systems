@@ -1,7 +1,6 @@
 //A seguinte função recebe uma matriz dr 1xn.
 //Onde n é um número n>0 e corresponde ao número de osciladores
 //A função devolve m onde m = dr.
-
 function m = f(dr)
     m = dr
 endfunction
@@ -62,7 +61,7 @@ function dphi = h(w, wij,r,fi,phi,n)
     for i=1:n
         dphi(1,i) = w(i);
         for j=1:n
-            dphi(1,i) = dphi(1,i) + wij(i,j)*r(1,j)*sin(fi(1,j)- fi(1,i) - phi(i,j));
+            dphi(1,i) = dphi(1,i) + wij(i,j).*r(1,j).*sin(fi(1,j)- fi(1,i) - phi(i,j));
         end
     end
 endfunction
@@ -143,22 +142,28 @@ function tetha = angulos(FI,r,x,n)
         tetha(:,i) = x(:,i)+r(:,i).*sin(FI(:,i)); 
     end
 endfunction
-R  = [0.20944 0.698132 -0.698132];
-r0 = [0 0 0];
-m0 = [0 0 0];
-X  = [0 0 0];
-x0 = [0 0 0];
-exe0 = [0 0 0];
-fi0 = [0 0 0];
+
+tInicio = 0;  // tempo de incio da simulação 
+tFim = 20; // tempo final da simulação 
+osciladores = 3; // número de osciladores 
+passo = 0.01; // intervalo de tempo entre cada interação da simulação 
+t = tInicio:passo:tFim 
+R  = [0.40944 0.29132 0.29132];
+r0 = zeros(1,osciladores)
+m0 = zeros(1,osciladores);
+X  = zeros(1,osciladores);
+x0 = zeros(1,osciladores);
+exe0 = zeros(1,osciladores);
+fi0 = zeros(1,osciladores);
 ar = 2;
 ax = 2;
 w  = [10 10 10]
-wij= [0 0 0;0 0 0;0.5 0 0]
-phi = [0 0 0;0 0 0;0 0 0] // Matriz do deslocamento, exemplo se tivermos 12 osciladores teremos que ter 12 linhas e 12 colunas, 6, 6 linhas e 6 colunas.
-x = deslocamento(ax,X,x0,exe0,3,0,25,0.01);
-r = amplitude(ar,R,r0,m0,3,0,25,0.01);
-FI = phase(w, wij,r,fi0,phi,3,0,25,0.01);
-tetha = angulos(FI,r,x,3);
-t = 0:0.01:25; 
+wij= [0 0 0;0.5 0 0;0.5 0 0];
+phi = [0 0 0;%pi/2 0 0;-%pi/2 0 0]; // Matriz do deslocamento, exemplo se tivermos 12 osciladores teremos que ter 12 linhas e 12 colunas, 6, 6 linhas e 6 colunas.
+x = deslocamento(ax,X,x0,exe0,osciladores,tInicio,tFim,passo);
+r = amplitude(ar,R,r0,m0,osciladores,tInicio,tFim,passo);
+FI = phase(w, wij,r,fi0,phi,osciladores,tInicio,tFim,passo);
+tetha = angulos(FI,r,x,osciladores);
+t = tInicio:passo:tFim;
 plot(t,tetha);
 
