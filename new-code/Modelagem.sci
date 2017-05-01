@@ -142,6 +142,7 @@ function tetha = angulos(FI,r,x,n)
         tetha(:,i) = x(:,i)+r(:,i).*sin(FI(:,i)); 
     end
 endfunction
+<<<<<<< HEAD
 
 tInicio = 0;  // tempo de incio da simulação 
 tFim = 20; // tempo final da simulação 
@@ -165,5 +166,21 @@ r = amplitude(ar,R,r0,m0,osciladores,tInicio,tFim,passo);
 FI = phase(w, wij,r,fi0,phi,osciladores,tInicio,tFim,passo);
 tetha = angulos(FI,r,x,osciladores);
 t = tInicio:passo:tFim;
+R  = [0.20944 0.698132 0.698132];
+r0 = [0 0 0];
+m0 = [0 0 0];
+X  = [0 0 0];
+x0 = [0 0 0];
+exe0 = [0 0 0];
+fi0 = [0 0 0];
+ar = 2;
+ax = 2;
+w  = [10 10 10]
+wij= [0 0 0;0.5 0 0;0.5 0 0]
+phi = [0 0 0;3.1415/2 0 0;-3.1415/2 0 0] // Matriz do deslocamento, exemplo se tivermos 12 osciladores teremos que ter 12 linhas e 12 colunas, 6, 6 linhas e 6 colunas.
+x = deslocamento(ax,X,x0,exe0,3,0,25,0.01);
+r = amplitude(ar,R,r0,m0,3,0,25,0.01);
+FI = phase(w, wij,r,fi0,phi,3,0,25,0.01);
+tetha = angulos(FI,r,x,3);
+t = 0:0.01:25;
 plot(t,tetha);
-
