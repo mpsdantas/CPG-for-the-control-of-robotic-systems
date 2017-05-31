@@ -103,8 +103,8 @@ function r = amplitude(ar,R,r0,m0,osciladores,a,b,passo)
     t = a:passo:b;
     n = length(t)
     for i = 1:n-1
-        kdm = g(ar,R,r(i,:),m(i,:),osciladores);
         km = f(m(i,:));
+        kdm = g(ar,R,r(i,:),m(i,:),osciladores);
         m(i+1,:) = m(i,:) + kdm*passo;
         r(i+1,:) = r(i,:) + km*passo;
     end
@@ -142,7 +142,9 @@ function tetha = angulos(FI,r,x,n)
         tetha(:,i) = x(:,i)+r(:,i).*sin(FI(:,i)); 
     end
 endfunction
-<<<<<<< HEAD
+
+
+//<<<<<<< HEAD
 
 tInicio = 0;  // tempo de incio da simulação 
 tFim = 20; // tempo final da simulação 
@@ -183,4 +185,4 @@ r = amplitude(ar,R,r0,m0,3,0,25,0.01);
 FI = phase(w, wij,r,fi0,phi,3,0,25,0.01);
 tetha = angulos(FI,r,x,3);
 t = 0:0.01:25;
-plot(t,tetha);
+plot(t,tetha)  
