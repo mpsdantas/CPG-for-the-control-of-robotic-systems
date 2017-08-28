@@ -20,7 +20,9 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="main.cpp" />
+		<Unit filename="Cpg-metodos.cpp" />
+		<Unit filename="Cpg.h" />
+		<Unit filename="cpg-main.cpp" />
 		<Extensions>
 			<code_completion />
 			<envvars />
