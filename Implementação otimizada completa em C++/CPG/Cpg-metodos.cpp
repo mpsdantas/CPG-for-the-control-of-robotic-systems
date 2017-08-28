@@ -1,7 +1,7 @@
 #include <iostream>
 using namespace std;
 #include "Cpg.h"
-void Cpg::criar(unsigned osciladoresM, unsigned tiM, unsigned tfM, float stepM, float **wijP, float **PhiP, float RM[]){
+void Cpg::criar(unsigned const &osciladoresM, unsigned const &tiM, unsigned const &tfM, float const &stepM, float const RM[], float const XM[]){
     /*
         Método criado em 25/08/2017.
         Criador: Marcus Paulo
@@ -13,50 +13,28 @@ void Cpg::criar(unsigned osciladoresM, unsigned tiM, unsigned tfM, float stepM, 
     osciladores = osciladoresM;
     step = stepM;
     w = createW(10);
-    amplitude = zeros(amplitude);
-    aux_amplitude = zeros(amplitude);
-    offset = zeros(offset);
-    aux_offset = zeros(offset);
-    Fi = zeros(Fi);
-    tetha = zeros(tetha);
-}
-
-float* Cpg::createW(float frequencia){
-    /*
-        Método criado em 25/08/2017.
-        Criador: Marcus Paulo
-        Função: gerar vetor de frequencias w.
-    */
-    w = new float(osciladores);
-    for(unsigned i=0;i<osciladores;i++) w[i] = 10;
-    return w;
-}
-float** Cpg::zeros(float **Matriz){
-    /*
-        Método criado em 25/08/2017.
-        Criador: Marcus Paulo
-        Função: Cria uma matriz a partir de um ponteiro de ponteiros e inicia ela com zeros.
-    */
-    Matriz = new float*[n];
-    for(unsigned i=0;i<n;i++){
-        Matriz[i] = new float[osciladores];
-        for(unsigned j=0;j<osciladores;j++){
-            Matriz[i][j]=0;
-        }
+    amplitude = zeros(n,osciladores,amplitude);
+    aux_amplitude = zeros(n,osciladores,amplitude);
+    offset = zeros(n,osciladores,offset);
+    aux_offset = zeros(n,osciladores,aux_offset);
+    Fi = zeros(n,osciladores,Fi);
+    tetha = zeros(n,osciladores,tetha);
+    wij = zeros(osciladores,osciladores,wij);
+    phi = zeros(osciladores,osciladores,phi);
+    R = new float[osciladores];
+    X = new float[osciladores];
+    for(unsigned i=0; i<osciladores;i++){
+            R[i] = RM[i];
+            X[i] = XM[i];
     }
-    return Matriz;
 }
-float* Cpg::generateVectorTime(unsigned ti, unsigned tf, float step){
+Cpg::Cpg(unsigned const &osciladoresM, unsigned const &tiM, unsigned const &tfM, float const &stepM, float const RM[], float const XM[]){
     /*
         Método criado em 25/08/2017.
         Criador: Marcus Paulo
-        Função: gera o vetor tempos e preenche além de dar o tamanho n.
+        Função: Construtor padrão da classe a partir de parametros.
     */
-    n = (tf-ti)/step;
-    vectorTime = new float[n];
-    vectorTime[0] = 0;
-    for(unsigned i=1; i<n;i++) vectorTime[i] += vectorTime[i-1]+step;
-    return vectorTime;
+    criar(osciladoresM, tiM, tfM, stepM, RM, XM);
 }
 Cpg::Cpg(){
     /*
@@ -84,11 +62,103 @@ Cpg::Cpg(){
     tf = 0;
     n = 0;
 }
-Cpg::Cpg(unsigned osciladoresM, unsigned tiM, unsigned tfM, float stepM, float **wijP, float **PhiP, float RM[]){
+Cpg::~Cpg(){
+    ti = 0;
+    tf = 0;
+    osciladores = 0;
+    step = 0;
+    wij = zeros(osciladores,osciladores,wij);
+    phi = zeros(osciladores,osciladores,phi);
+    for(unsigned i=0; i<osciladores;i++){
+        delete[] wij[i];
+        delete[] phi[i];
+    }
+    for(unsigned i=0; i<n;i++){
+        delete[] amplitude[i];
+        delete[] aux_amplitude[i];
+        delete[] offset[i];
+        delete[] aux_offset[i];
+        delete[] Fi[i];
+        delete[] tetha[i];
+    }
+    delete[] amplitude;
+    delete[] aux_amplitude;
+    delete[] offset;
+    delete[] aux_offset;
+    delete[] Fi;
+    delete[] tetha;
+    delete[] vectorTime;
+    delete[] w;
+    delete[] wij;
+    delete[] phi;
+    delete[] R;
+    delete[] X;
+}
+float* Cpg::generateVectorTime(unsigned const &ti, unsigned const &tf, float const &step){
     /*
         Método criado em 25/08/2017.
         Criador: Marcus Paulo
-        Função: Construtor padrão da classe a partir de parametros.
+        Função: gera o vetor tempos e preenche além de dar o tamanho n.
     */
-    criar(osciladoresM, tiM, tfM, stepM, wijP, PhiP, RM);
+    n = (tf-ti)/step;
+    vectorTime = new float[n];
+    vectorTime[0] = 0;
+    for(unsigned i=1; i<n;i++) vectorTime[i] += vectorTime[i-1]+step;
+    return vectorTime;
 }
+float** Cpg::zeros(unsigned const &l, unsigned const &c, float **Matriz){
+    /*
+        Método criado em 25/08/2017.
+        Criador: Marcus Paulo
+        Função: Cria uma matriz a partir de um ponteiro de ponteiros e inicia ela com zeros.
+    */
+    Matriz = new float*[n];
+    for(unsigned i=0;i<l;i++){
+        Matriz[i] = new float[osciladores];
+        for(unsigned j=0;j<c;j++){
+            Matriz[i][j]=0;
+        }
+    }
+    return Matriz;
+}
+float* Cpg::createW(float const &frequencia){
+    /*
+        Método criado em 25/08/2017.
+        Criador: Marcus Paulo
+        Função: gerar vetor de frequencias w.
+    */
+    w = new float(osciladores);
+    for(unsigned i=0;i<osciladores;i++) w[i] = 10;
+    return w;
+}
+void Cpg::getWij() const{
+    /*
+        Método criado em 25/08/2017.
+        Criador: Marcus Paulo
+        Função: imprime a matriz wij.
+    */
+    for(unsigned i =0; i<osciladores;i++){
+        for(unsigned j =0; j<osciladores;j++){
+            cout << wij[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+void Cpg::getPhi() const{
+    /*
+        Método criado em 25/08/2017.
+        Criador: Marcus Paulo
+        Função: imprime a matriz phi.
+    */
+    for(unsigned i =0; i<osciladores;i++){
+        for(unsigned j =0; j<osciladores;j++){
+            cout << phi[i][j] << " ";
+        }
+        cout << endl;
+    }
+}
+
+
+
+
+

@@ -27,17 +27,32 @@ private:
     //----------- Variaveis e constantes --------------//
 
     //----------- Métodos para os construtores e destrutores da classe --------------//
-    void criar(unsigned osciladoresM, unsigned tiM, unsigned tfM, float stepM, float **wijP, float **PhiP, float RM[]);
+    void criar(unsigned const &osciladoresM, unsigned const &tiM, unsigned const &tfM, float const &stepM, float const RM[], float const XM[]);
     void copiar();
     void limpar();
     //----------- Métodos para os construtores e destrutores da classe --------------//
 
-    float* generateVectorTime(unsigned ti, unsigned tf, float step); // Gera vetor de tempo e n.
-    float** zeros(float **Matriz); // Inicializa e preenche com zeros uma matriz.
-    float* createW(float frequencia); // Gera o vetor de frequencias w.
+    float* generateVectorTime(unsigned const &ti, unsigned const &tf, float const &step); // Gera vetor de tempo e n.
+    float** zeros(unsigned const &l, unsigned const &c, float **Matriz); // Inicializa e preenche com zeros uma matriz.
+    float* createW(float const &frequencia); // Gera o vetor de frequencias w.
 public:
     //Construtor padrão com parametros.
-    Cpg(unsigned osciladoresM, unsigned tiM, unsigned tfM, float stepM, float **wijP, float **PhiP, float RM[]);
+    Cpg(unsigned const &osciladoresM, unsigned const &tiM, unsigned const &tfM, float const &stepM, float const RM[], float const XM[]);
     Cpg(); // Construtor padrão sem parametros.
+    ~Cpg();
+    void getWij() const;
+    void getPhi() const;
+    inline float getAr() const{return ar;}
+    inline float getAx() const{return ax;}
+    inline float getStep() const{return step;}
+    inline unsigned getOsciladores() const{return osciladores;}
+    inline unsigned getTi() const{return ti;}
+    inline unsigned getTf() const{return tf;}
+    inline unsigned getN() const{return n;}
+    inline void setPhi(unsigned const &l, unsigned const &c, float const &value){phi[l][c] = value;}
+    inline void setWij(unsigned const &l, unsigned const &c, float const &value){wij[l][c] = value;}
+    inline void setAr(float const &value){ar = value;}
+    inline void setAx(float const &value){ax = value;}
+
 
 };
