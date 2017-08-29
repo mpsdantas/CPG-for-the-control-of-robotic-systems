@@ -2,6 +2,7 @@
 // Created by marcus on 29/08/17.
 //
 #include <iostream>
+#include <cmath>
 using namespace std;
 #include "Cpg.h"
 void Cpg::criar(unsigned const &osciladoresM, unsigned const &tiM, unsigned const &tfM, float const &stepM, float const RM[], float const XM[]){
@@ -158,6 +159,28 @@ void Cpg::getPhi() const{
             cout << phi[i][j] << " ";
         }
         cout << endl;
+    }
+}
+void Cpg::processCpg() {
+    float k2[] = {0, 0, 0};
+    float k1[] = {0, 0, 0};
+    for (unsigned i = 0; i <n ; i++) {
+        for (unsigned j = 0; j < osciladores ; j++) {
+            k1[j] = ar*((ar/4)*(R[j]-amplitude[i][j]) - aux_amplitude[i][j]);
+            k2[j] = aux_amplitude[i][j];
+            aux_amplitude[i+1][j] = aux_amplitude[i][j] + k1[j]*step;
+            amplitude[i+1][j] = amplitude[i][j] + k2[j]*step;
+            k1[j] = ax*((ax/4)*(X[j]-offset[i][j]) - aux_offset[i][j]);
+            k2[j] = aux_offset[i][j];
+            aux_offset[i+1][j] = aux_offset[i][j] + k1[j]*step;
+            offset[i+1][j] = offset[i][j] + k2[j]*step;
+            k1[j] = w[j];
+            for (unsigned k = 0; k < osciladores ; k++) {
+                k1[j] = k1[j] + wij[j][k]*amplitude[i][k]*sin(Fi[i][k]-Fi[i][j]-phi[j][k]);
+            }
+            Fi[i+1][j] = Fi[i][j] + k1[j]*step;
+            tetha[i][j] = offset[i][j] + amplitude[i][j]*sin(Fi[i][j]);
+        }
     }
 }
 

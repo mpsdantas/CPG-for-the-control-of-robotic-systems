@@ -5,8 +5,8 @@ using namespace std;
 int main() {
     unsigned osciladores = 3;
     unsigned ti = 0;
-    unsigned tf = 30;
-    float step = 0.00001;
+    unsigned tf = 25;
+    float step = 0.01;
     float RM[] = {0.40944, 0.29132, 0.29132};
     float XM[] = {0, 0, 0};
     Cpg cpg(osciladores,ti,tf,step,RM,XM);
@@ -17,8 +17,7 @@ int main() {
     cpg.setPhi(2,0,-PI/2);
     cpg.setAr(2);
     cpg.setAx(2);
-    cout << cpg.getOsciladores() << endl;
-    cout << cpg.getAr() << endl;
-    cout << cpg.getN() << endl;
     // ---------------- Setando defasagem e outros parametros------------
+    cpg.processCpg();
+    cout << cpg.getN();
 }

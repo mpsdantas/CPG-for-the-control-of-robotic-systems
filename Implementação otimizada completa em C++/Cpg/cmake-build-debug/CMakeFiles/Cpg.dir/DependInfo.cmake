@@ -4,8 +4,8 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/marcus/Documentos/Cpg/Cpg.cpp" "/home/marcus/Documentos/Cpg/cmake-build-debug/CMakeFiles/Cpg.dir/Cpg.cpp.o"
-  "/home/marcus/Documentos/Cpg/main.cpp" "/home/marcus/Documentos/Cpg/cmake-build-debug/CMakeFiles/Cpg.dir/main.cpp.o"
+  "/home/marcus/Documentos/Pesquisa/cpg/Implementação otimizada completa em C++/Cpg/Cpg.cpp" "/home/marcus/Documentos/Pesquisa/cpg/Implementação otimizada completa em C++/Cpg/cmake-build-debug/CMakeFiles/Cpg.dir/Cpg.cpp.o"
+  "/home/marcus/Documentos/Pesquisa/cpg/Implementação otimizada completa em C++/Cpg/main.cpp" "/home/marcus/Documentos/Pesquisa/cpg/Implementação otimizada completa em C++/Cpg/cmake-build-debug/CMakeFiles/Cpg.dir/main.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

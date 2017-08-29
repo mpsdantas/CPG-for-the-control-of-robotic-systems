@@ -39,6 +39,7 @@ class Cpg {
     float* generateVectorTime(unsigned const &ti, unsigned const &tf, float const &step); // Gera vetor de tempo e n.
     float** zeros(unsigned const &l, unsigned const &c, float **Matriz); // Inicializa e preenche com zeros uma matriz.
     float* createW(float const &frequencia); // Gera o vetor de frequencias w.
+
 public:
     //Construtor padrão com parametros.
     Cpg(unsigned const &osciladoresM, unsigned const &tiM, unsigned const &tfM, float const &stepM, float const RM[], float const XM[]);
@@ -57,5 +58,6 @@ public:
     inline void setWij(unsigned const &l, unsigned const &c, float const &value){wij[l][c] = value;}
     inline void setAr(float const &value){ar = value;}
     inline void setAx(float const &value){ax = value;}
+    void processCpg();
 };
 #endif //CPG_CPG_H

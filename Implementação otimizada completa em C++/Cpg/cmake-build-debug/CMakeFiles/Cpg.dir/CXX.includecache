@@ -6,17 +6,19 @@
 
 #IncludeRegexTransform: 
 
-/home/marcus/Documentos/Cpg/Cpg.cpp
+/home/marcus/Documentos/Pesquisa/cpg/Implementação otimizada completa em C++/Cpg/Cpg.cpp
+iostream
+-
+cmath
+-
+Cpg.h
+/home/marcus/Documentos/Pesquisa/cpg/Implementação otimizada completa em C++/Cpg/Cpg.h
+
+/home/marcus/Documentos/Pesquisa/cpg/Implementação otimizada completa em C++/Cpg/Cpg.h
+
+/home/marcus/Documentos/Pesquisa/cpg/Implementação otimizada completa em C++/Cpg/main.cpp
 iostream
 -
 Cpg.h
-/home/marcus/Documentos/Cpg/Cpg.h
-
-/home/marcus/Documentos/Cpg/Cpg.h
-
-/home/marcus/Documentos/Cpg/main.cpp
-iostream
--
-Cpg.h
-/home/marcus/Documentos/Cpg/Cpg.h
+/home/marcus/Documentos/Pesquisa/cpg/Implementação otimizada completa em C++/Cpg/Cpg.h
 
