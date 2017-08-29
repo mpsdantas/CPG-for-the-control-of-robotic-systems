@@ -104,7 +104,7 @@ float* Cpg::generateVectorTime(unsigned const &ti, unsigned const &tf, float con
         Criador: Marcus Paulo
         Função: gera o vetor tempos e preenche além de dar o tamanho n.
     */
-    n = (tf-ti)/step;
+    n = (tf-ti)/step+2;
     vectorTime = new float[n];
     vectorTime[0] = 0;
     for(unsigned i=1; i<n;i++) vectorTime[i] += vectorTime[i-1]+step;
@@ -162,23 +162,22 @@ void Cpg::getPhi() const{
     }
 }
 void Cpg::processCpg() {
-    float k2[] = {0, 0, 0};
-    float k1[] = {0, 0, 0};
-    for (unsigned i = 0; i <n ; i++) {
+    float k;
+    for (unsigned i = 0; i <n-1; i++) {
         for (unsigned j = 0; j < osciladores ; j++) {
-            k1[j] = ar*((ar/4)*(R[j]-amplitude[i][j]) - aux_amplitude[i][j]);
-            k2[j] = aux_amplitude[i][j];
-            aux_amplitude[i+1][j] = aux_amplitude[i][j] + k1[j]*step;
-            amplitude[i+1][j] = amplitude[i][j] + k2[j]*step;
-            k1[j] = ax*((ax/4)*(X[j]-offset[i][j]) - aux_offset[i][j]);
-            k2[j] = aux_offset[i][j];
-            aux_offset[i+1][j] = aux_offset[i][j] + k1[j]*step;
-            offset[i+1][j] = offset[i][j] + k2[j]*step;
-            k1[j] = w[j];
-            for (unsigned k = 0; k < osciladores ; k++) {
-                k1[j] = k1[j] + wij[j][k]*amplitude[i][k]*sin(Fi[i][k]-Fi[i][j]-phi[j][k]);
+            k = ar*((ar/4)*(R[j]-amplitude[i][j]) - aux_amplitude[i][j]);
+            aux_amplitude[i+1][j] = aux_amplitude[i][j] + k*step;
+            k = aux_amplitude[i][j];
+            amplitude[i+1][j] = amplitude[i][j] + k*step;
+            k = ax*((ax/4)*(X[j]-offset[i][j]) - aux_offset[i][j]);
+            aux_offset[i+1][j] = aux_offset[i][j] + k*step;
+            k = aux_offset[i][j];
+            offset[i+1][j] = offset[i][j] + k*step;
+            k = w[j];
+            for (unsigned l = 0; l < osciladores ; l++) {
+                k = k + wij[j][l]*amplitude[i][l]*sin(Fi[i][l]-Fi[i][j]-phi[j][l]);
             }
-            Fi[i+1][j] = Fi[i][j] + k1[j]*step;
+            Fi[i+1][j] = Fi[i][j] + k*step;
             tetha[i][j] = offset[i][j] + amplitude[i][j]*sin(Fi[i][j]);
         }
     }

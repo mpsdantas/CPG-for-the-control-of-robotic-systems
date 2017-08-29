@@ -19,7 +19,6 @@ class Cpg {
     float *X;
     float *vectorTime;
     //----------- Matrizes e vetores --------------//
-
     //----------- Variaveis e constantes --------------//
     float ar;
     float ax;
@@ -29,17 +28,14 @@ class Cpg {
     unsigned tf;
     unsigned n;
     //----------- Variaveis e constantes --------------//
-
     //----------- Métodos para os construtores e destrutores da classe --------------//
     void criar(unsigned const &osciladoresM, unsigned const &tiM, unsigned const &tfM, float const &stepM, float const RM[], float const XM[]);
     void copiar();
     void limpar();
     //----------- Métodos para os construtores e destrutores da classe --------------//
-
-    float* generateVectorTime(unsigned const &ti, unsigned const &tf, float const &step); // Gera vetor de tempo e n.
     float** zeros(unsigned const &l, unsigned const &c, float **Matriz); // Inicializa e preenche com zeros uma matriz.
     float* createW(float const &frequencia); // Gera o vetor de frequencias w.
-
+    float* generateVectorTime(unsigned const &ti, unsigned const &tf, float const &step); // Gera vetor de tempo e n.
 public:
     //Construtor padrão com parametros.
     Cpg(unsigned const &osciladoresM, unsigned const &tiM, unsigned const &tfM, float const &stepM, float const RM[], float const XM[]);
