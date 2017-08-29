@@ -1,0 +1,1 @@
+/usr/bin/c++  -g   CMakeFiles/Cpg.dir/main.cpp.o CMakeFiles/Cpg.dir/Cpg.cpp.o  -o Cpg 

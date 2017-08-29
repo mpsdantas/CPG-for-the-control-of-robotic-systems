@@ -2,8 +2,7 @@
 #include "Cpg.h"
 #define PI 3.14159265359
 using namespace std;
-int main()
-{
+int main() {
     unsigned osciladores = 3;
     unsigned ti = 0;
     unsigned tf = 30;

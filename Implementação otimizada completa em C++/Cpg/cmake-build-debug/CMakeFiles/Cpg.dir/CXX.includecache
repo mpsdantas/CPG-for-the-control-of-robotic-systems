@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/marcus/Documentos/Cpg/Cpg.cpp
+iostream
+-
+Cpg.h
+/home/marcus/Documentos/Cpg/Cpg.h
+
+/home/marcus/Documentos/Cpg/Cpg.h
+
+/home/marcus/Documentos/Cpg/main.cpp
+iostream
+-
+Cpg.h
+/home/marcus/Documentos/Cpg/Cpg.h
+

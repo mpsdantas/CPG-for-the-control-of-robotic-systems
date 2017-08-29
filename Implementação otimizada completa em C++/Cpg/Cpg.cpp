@@ -1,3 +1,6 @@
+//
+// Created by marcus on 29/08/17.
+//
 #include <iostream>
 using namespace std;
 #include "Cpg.h"
@@ -24,8 +27,8 @@ void Cpg::criar(unsigned const &osciladoresM, unsigned const &tiM, unsigned cons
     R = new float[osciladores];
     X = new float[osciladores];
     for(unsigned i=0; i<osciladores;i++){
-            R[i] = RM[i];
-            X[i] = XM[i];
+        R[i] = RM[i];
+        X[i] = XM[i];
     }
 }
 Cpg::Cpg(unsigned const &osciladoresM, unsigned const &tiM, unsigned const &tfM, float const &stepM, float const RM[], float const XM[]){
@@ -157,7 +160,6 @@ void Cpg::getPhi() const{
         cout << endl;
     }
 }
-
 
 
 

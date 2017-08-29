@@ -1,6 +1,10 @@
-class Cpg{
-private:
+//
+// Created by marcus on 29/08/17.
+//
+#ifndef CPG_CPG_H
+#define CPG_CPG_H
 
+class Cpg {
     //----------- Matrizes e vetores --------------//
     float **amplitude;
     float **aux_amplitude;
@@ -53,6 +57,5 @@ public:
     inline void setWij(unsigned const &l, unsigned const &c, float const &value){wij[l][c] = value;}
     inline void setAr(float const &value){ar = value;}
     inline void setAx(float const &value){ax = value;}
-
-
 };
+#endif //CPG_CPG_H
