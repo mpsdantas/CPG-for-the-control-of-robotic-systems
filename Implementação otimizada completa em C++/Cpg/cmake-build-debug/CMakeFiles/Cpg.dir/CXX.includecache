@@ -11,6 +11,8 @@ iostream
 -
 cmath
 -
+fstream
+-
 Cpg.h
 /home/marcus/Documentos/Pesquisa/cpg/Implementação otimizada completa em C++/Cpg/Cpg.h
 
@@ -18,6 +20,8 @@ Cpg.h
 
 /home/marcus/Documentos/Pesquisa/cpg/Implementação otimizada completa em C++/Cpg/main.cpp
 iostream
+-
+fstream
 -
 Cpg.h
 /home/marcus/Documentos/Pesquisa/cpg/Implementação otimizada completa em C++/Cpg/Cpg.h

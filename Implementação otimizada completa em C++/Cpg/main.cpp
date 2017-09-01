@@ -1,12 +1,14 @@
 #include <iostream>
+#include <fstream>
 #include "Cpg.h"
 #define PI 3.14159265359
 using namespace std;
 int main() {
+    int var = 1234;
     unsigned osciladores = 3;
     unsigned ti = 0;
     unsigned tf = 25;
-    float step = 0.0001;
+    float step = 0.01;
     float RM[] = {0.40944, 0.29132, 0.29132};
     float XM[] = {0, 0, 0};
     Cpg cpg(osciladores,ti,tf,step,RM,XM);
@@ -19,4 +21,5 @@ int main() {
     cpg.setAx(2);
     // ---------------- Setando defasagem e outros parametros------------
     cpg.processCpg();
+    cpg.saveCpg("Arquivo1.csv",cpg);
 }

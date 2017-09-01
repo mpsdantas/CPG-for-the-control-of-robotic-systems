@@ -3,8 +3,9 @@
 //
 #include <iostream>
 #include <cmath>
-using namespace std;
+#include <fstream>
 #include "Cpg.h"
+using namespace std;
 void Cpg::criar(unsigned const &osciladoresM, unsigned const &tiM, unsigned const &tfM, float const &stepM, float const RM[], float const XM[]){
     /*
         Método criado em 25/08/2017.
@@ -104,7 +105,7 @@ float* Cpg::generateVectorTime(unsigned const &ti, unsigned const &tf, float con
         Criador: Marcus Paulo
         Função: gera o vetor tempos e preenche além de dar o tamanho n.
     */
-    n = (tf-ti)/step+2;
+    n = (tf-ti)/step+1;
     vectorTime = new float[n];
     vectorTime[0] = 0;
     for(unsigned i=1; i<n;i++) vectorTime[i] += vectorTime[i-1]+step;
@@ -180,6 +181,22 @@ void Cpg::processCpg() {
             Fi[i+1][j] = Fi[i][j] + k*step;
             tetha[i][j] = offset[i][j] + amplitude[i][j]*sin(Fi[i][j]);
         }
+    }
+    for (unsigned m = 0; m < osciladores; m++) tetha[n-1][m] = offset[n-1][m] + amplitude[n-1][m]*sin(Fi[n-1][m]);
+}
+ostream &operator<<(ostream &O, const Cpg &cpg) {
+    for (unsigned i = 0; i < cpg.n; i++) {
+        for (unsigned j = 0; j < cpg.osciladores ; j++) {
+            O << cpg.tetha[i][j];
+            if(j!=2) O<<',';
+        }
+        O << endl;
+    }
+}
+void Cpg::saveCpg(string const &name,const Cpg &cpg) {
+    ofstream arq(name.c_str());
+    if(arq.is_open()){
+        arq << cpg;
     }
 }
 

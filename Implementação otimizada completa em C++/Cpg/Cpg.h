@@ -3,7 +3,7 @@
 //
 #ifndef CPG_CPG_H
 #define CPG_CPG_H
-
+using namespace std;
 class Cpg {
     //----------- Matrizes e vetores --------------//
     float **amplitude;
@@ -55,5 +55,7 @@ public:
     inline void setAr(float const &value){ar = value;}
     inline void setAx(float const &value){ax = value;}
     void processCpg();
+    friend ostream &operator<<(ostream &O, const Cpg &cpg);
+    void saveCpg(string const &name,const Cpg &cpg);
 };
 #endif //CPG_CPG_H
