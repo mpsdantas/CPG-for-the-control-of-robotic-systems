@@ -56,6 +56,10 @@ public:
     inline void setAx(float const &value){ax = value;}
     void processCpg();
     friend ostream &operator<<(ostream &O, const Cpg &cpg);
-    void saveCpg(string const &name,const Cpg &cpg);
+    void saveCpg(string const &name);
+    void saveVectorTime(string const &name);
+    void saveAmplitude(string const &name);
+    void saveOffset(string const &name);
+    void saveFI(string const &name);
 };
 #endif //CPG_CPG_H

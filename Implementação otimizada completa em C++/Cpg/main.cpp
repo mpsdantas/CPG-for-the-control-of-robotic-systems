@@ -1,5 +1,4 @@
 #include <iostream>
-#include <fstream>
 #include "Cpg.h"
 #define PI 3.14159265359
 using namespace std;
@@ -21,5 +20,6 @@ int main() {
     cpg.setAx(2);
     // ---------------- Setando defasagem e outros parametros------------
     cpg.processCpg();
-    cpg.saveCpg("Arquivo1.csv",cpg);
+    cpg.saveCpg("Arquivo1.csv");
+    cpg.saveVectorTime("time.csv");
 }

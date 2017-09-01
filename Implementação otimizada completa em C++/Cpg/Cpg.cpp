@@ -188,15 +188,67 @@ ostream &operator<<(ostream &O, const Cpg &cpg) {
     for (unsigned i = 0; i < cpg.n; i++) {
         for (unsigned j = 0; j < cpg.osciladores ; j++) {
             O << cpg.tetha[i][j];
-            if(j!=2) O<<',';
+            if(j!=cpg.osciladores-1) O<<',';
         }
         O << endl;
     }
 }
-void Cpg::saveCpg(string const &name,const Cpg &cpg) {
+void Cpg::saveCpg(string const &name){
     ofstream arq(name.c_str());
     if(arq.is_open()){
-        arq << cpg;
+        for(unsigned i = 0; i<n;i++) {
+            for (unsigned j = 0; j < osciladores; j++) {
+                arq << tetha[i][j];
+                if (j != osciladores - 1) arq << ',';
+            }
+            arq << endl;
+        }
+    }
+    arq.close();
+}
+void Cpg::saveVectorTime(string const &name) {
+    ofstream arq(name.c_str());
+    if(arq.is_open()){
+        for(unsigned i =0; i <n;i++){
+            arq << vectorTime[i] << endl;
+        }
+    }
+    arq.close();
+}
+void Cpg::saveAmplitude(string const &name) {
+    ofstream arq(name.c_str());
+    if(arq.is_open()){
+        for(unsigned i = 0; i<n;i++) {
+            for (unsigned j = 0; j < osciladores; j++) {
+                arq << amplitude[i][j];
+                if (j != osciladores - 1) arq << ',';
+            }
+            arq << endl;
+        }
+    }
+}
+void Cpg::saveOffset(string const &name) {
+    ofstream arq(name.c_str());
+    if(arq.is_open()){
+        for(unsigned i = 0; i<n;i++) {
+            for (unsigned j = 0; j < osciladores; j++) {
+                arq << offset[i][j];
+                if (j != osciladores - 1) arq << ',';
+            }
+            arq << endl;
+        }
+    }
+}
+void Cpg::saveFI(string const &name) {
+    ofstream arq(name.c_str());
+    if(arq.is_open()){
+        for(unsigned i = 0; i<n;i++) {
+            for (unsigned j = 0; j < osciladores; j++) {
+                arq << Fi[i][j];
+                if (j != osciladores - 1) arq << ',';
+            }
+            arq << endl;
+        }
     }
 }
 
