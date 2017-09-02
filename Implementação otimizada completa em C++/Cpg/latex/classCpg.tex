@@ -1,0 +1,494 @@
+\hypertarget{classCpg}{}\section{Cpg Class Reference}
+\label{classCpg}\index{Cpg@{Cpg}}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{classCpg_aa4f2d1746f254898df3343de7827994c}{Cpg} (unsigned const \&oscillatorsM, unsigned const \&tiM, unsigned const \&tfM, float const \&stepM, float const RM\mbox{[}$\,$\mbox{]}, float const XM\mbox{[}$\,$\mbox{]})
+\item 
+\hyperlink{classCpg_a63ca031bf2884942657658668fc10afa}{Cpg} ()
+\item 
+\hyperlink{classCpg_a35060a1599a9ef8b8e1d693d6ccc57b5}{$\sim$\+Cpg} ()
+\item 
+void \hyperlink{classCpg_a35bdba315defd8c291c4c9cc03a170de}{get\+Wij} () const 
+\item 
+void \hyperlink{classCpg_ad95a497c054cb1b590d11c37ac5e4587}{get\+Phi} () const 
+\item 
+float \hyperlink{classCpg_ae1dabd4cdf93e6b33194c8a72684cb4c}{get\+Ar} () const 
+\item 
+float \hyperlink{classCpg_a47946da3dd0c6bfb4f893b229aae6f4a}{get\+Ax} () const 
+\item 
+float \hyperlink{classCpg_a0a9ac8b5a332b4aed76fbd72366568e2}{get\+Step} () const 
+\item 
+unsigned \hyperlink{classCpg_aa49b5de07bb98b1532e0260c6d8c1e74}{getoscillators} () const 
+\item 
+unsigned \hyperlink{classCpg_a63d0ff3b0257b961f3eb7b0ca1c6b737}{get\+Ti} () const 
+\item 
+unsigned \hyperlink{classCpg_a40c6404103f6cb39f29242bab0aa5df4}{get\+Tf} () const 
+\item 
+unsigned \hyperlink{classCpg_a6d507c49072684060bc8250f3b2138db}{getN} () const 
+\item 
+void \hyperlink{classCpg_a0f5050bebc6051e40de3c4ac5dd1932a}{set\+Phi} (unsigned const \&l, unsigned const \&c, float const \&value)
+\item 
+void \hyperlink{classCpg_a2c2651f04fa5d819fa5e7bebc42047e6}{set\+Wij} (unsigned const \&l, unsigned const \&c, float const \&value)
+\item 
+void \hyperlink{classCpg_a80c39262bf404f7137b159ad49e1b54f}{set\+Ar} (float const \&value)
+\item 
+void \hyperlink{classCpg_add9ec0364bbe3958d7eac5d059985d9c}{set\+Ax} (float const \&value)
+\item 
+void \hyperlink{classCpg_ad3bac9ebe928c26c6beb6a4084585dc1}{process\+Cpg} ()
+\item 
+void \hyperlink{classCpg_abd793d8f3c4ea00d3b6580ff9c2ee7d9}{save\+Cpg} (string const \&name)
+\item 
+void \hyperlink{classCpg_a96a93c0107065678c2de6486136f9cf8}{save\+Vector\+Time} (string const \&name)
+\item 
+void \hyperlink{classCpg_aec2020a46294886424682957f2d441a1}{save\+Amplitude} (string const \&name)
+\item 
+void \hyperlink{classCpg_acebfbe4919359a28df5477fd431306bc}{save\+Offset} (string const \&name)
+\item 
+void \hyperlink{classCpg_a572a47185ab8bbcbc241d7631ce73212}{save\+FI} (string const \&name)
+\end{DoxyCompactItemize}
+\subsection*{Private Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{classCpg_ad35216294fb2aa04bf75b7cc3628c35a}{criar} (unsigned const \&oscillatorsM, unsigned const \&tiM, unsigned const \&tfM, float const \&stepM, float const RM\mbox{[}$\,$\mbox{]}, float const XM\mbox{[}$\,$\mbox{]})
+\item 
+float $\ast$$\ast$ \hyperlink{classCpg_a4584d250ed6e8beace3ada7c0a28455a}{zeros} (unsigned const \&l, unsigned const \&c, float $\ast$$\ast$Matriz)
+\item 
+float $\ast$ \hyperlink{classCpg_a79402424076964ff90210050e79a35e7}{createW} (float const \&frequencia)
+\item 
+float $\ast$ \hyperlink{classCpg_adeeac0f667c5175da03bb2dce6efad68}{generate\+Vector\+Time} (unsigned const \&\hyperlink{classCpg_ae22d05d6332474232e17951527266c5e}{ti}, unsigned const \&\hyperlink{classCpg_ac0c4c837f76afff78feb182fe840d9b2}{tf}, float const \&\hyperlink{classCpg_ac401bdb453b48eb16f139c85cf84c50e}{step})
+\end{DoxyCompactItemize}
+\subsection*{Private Attributes}
+\begin{DoxyCompactItemize}
+\item 
+float $\ast$$\ast$ \hyperlink{classCpg_ab69c24779052ba5cc8e510b71562945f}{amplitude}\hypertarget{classCpg_ab69c24779052ba5cc8e510b71562945f}{}\label{classCpg_ab69c24779052ba5cc8e510b71562945f}
+
+\begin{DoxyCompactList}\small\item\em Pointer to the array width, from that pointer will be created an array nxoscillators. \end{DoxyCompactList}\item 
+float $\ast$$\ast$ \hyperlink{classCpg_abefe83cdfd37126adb02aec6810246eb}{aux\+\_\+amplitude}\hypertarget{classCpg_abefe83cdfd37126adb02aec6810246eb}{}\label{classCpg_abefe83cdfd37126adb02aec6810246eb}
+
+\begin{DoxyCompactList}\small\item\em Pointer to the auxiliary array amplitude, pointer used in the modeling of the second order E\+DO. \end{DoxyCompactList}\item 
+float $\ast$$\ast$ \hyperlink{classCpg_ab407512343adf0ece4c570f7d33a3a74}{offset}\hypertarget{classCpg_ab407512343adf0ece4c570f7d33a3a74}{}\label{classCpg_ab407512343adf0ece4c570f7d33a3a74}
+
+\begin{DoxyCompactList}\small\item\em Pointer to the array offset, from that pointer will be created an array nxoscillators. \end{DoxyCompactList}\item 
+float $\ast$$\ast$ \hyperlink{classCpg_a1c6e8f93aed513fb523af2a8b47018fb}{aux\+\_\+offset}\hypertarget{classCpg_a1c6e8f93aed513fb523af2a8b47018fb}{}\label{classCpg_a1c6e8f93aed513fb523af2a8b47018fb}
+
+\begin{DoxyCompactList}\small\item\em Pointer to the array offset, from that pointer will be created an array nxoscildaores. \end{DoxyCompactList}\item 
+float $\ast$$\ast$ \hyperlink{classCpg_a80467f511271f69ea5b66df7991c4293}{Fi}\hypertarget{classCpg_a80467f511271f69ea5b66df7991c4293}{}\label{classCpg_a80467f511271f69ea5b66df7991c4293}
+
+\begin{DoxyCompactList}\small\item\em Pointer to the array Fi, from that pointer will be created an array nxoscildaores. \end{DoxyCompactList}\item 
+float $\ast$$\ast$ \hyperlink{classCpg_af954d4061c759b6767e8a44e66368834}{tetha}\hypertarget{classCpg_af954d4061c759b6767e8a44e66368834}{}\label{classCpg_af954d4061c759b6767e8a44e66368834}
+
+\begin{DoxyCompactList}\small\item\em Pointer to the tetha array, from that pointer an array will be created nxoscildaores. \end{DoxyCompactList}\item 
+float $\ast$$\ast$ \hyperlink{classCpg_af83842cbcf4b259e90159cf8dcb0c2c5}{wij}\hypertarget{classCpg_af83842cbcf4b259e90159cf8dcb0c2c5}{}\label{classCpg_af83842cbcf4b259e90159cf8dcb0c2c5}
+
+\begin{DoxyCompactList}\small\item\em Pointer to matrix wij, lag matrix oscildaoresxoscildaores. \end{DoxyCompactList}\item 
+float $\ast$$\ast$ \hyperlink{classCpg_ab2ad53b02b844a42219641124b2f9a91}{phi}\hypertarget{classCpg_ab2ad53b02b844a42219641124b2f9a91}{}\label{classCpg_ab2ad53b02b844a42219641124b2f9a91}
+
+\begin{DoxyCompactList}\small\item\em Pointer to the phi matrix, lag matrix oscildaoresxoscildaores. \end{DoxyCompactList}\item 
+float $\ast$ \hyperlink{classCpg_ac9ca74e1fb0c062a36a429def9e09fd4}{w}\hypertarget{classCpg_ac9ca74e1fb0c062a36a429def9e09fd4}{}\label{classCpg_ac9ca74e1fb0c062a36a429def9e09fd4}
+
+\begin{DoxyCompactList}\small\item\em Pointer to vector w, vector corresponding to frequency of each oscillator. \end{DoxyCompactList}\item 
+float $\ast$ \hyperlink{classCpg_a26600aab5d25563f09d8122ad054564d}{R}\hypertarget{classCpg_a26600aab5d25563f09d8122ad054564d}{}\label{classCpg_a26600aab5d25563f09d8122ad054564d}
+
+\begin{DoxyCompactList}\small\item\em Pointer to the vector R, vector corresponds to the maximum amplitude of each oscillator. \end{DoxyCompactList}\item 
+float $\ast$ \hyperlink{classCpg_ab5e9ed03a3c2922f1bb1686e4564828c}{X}\hypertarget{classCpg_ab5e9ed03a3c2922f1bb1686e4564828c}{}\label{classCpg_ab5e9ed03a3c2922f1bb1686e4564828c}
+
+\begin{DoxyCompactList}\small\item\em Pointer to vector X, vector corresponds to the maximum offset of each oscillator. \end{DoxyCompactList}\item 
+float $\ast$ \hyperlink{classCpg_a039cbe2ebef83e1209f360d4bb30692a}{vector\+Time}\hypertarget{classCpg_a039cbe2ebef83e1209f360d4bb30692a}{}\label{classCpg_a039cbe2ebef83e1209f360d4bb30692a}
+
+\begin{DoxyCompactList}\small\item\em Pointer to the vector of times, vector generated from the initial and final time. \end{DoxyCompactList}\item 
+float \hyperlink{classCpg_af76aac2e1a75360d0dafdad4b1962c0b}{ar}\hypertarget{classCpg_af76aac2e1a75360d0dafdad4b1962c0b}{}\label{classCpg_af76aac2e1a75360d0dafdad4b1962c0b}
+
+\begin{DoxyCompactList}\small\item\em Constant amplitude. \end{DoxyCompactList}\item 
+float \hyperlink{classCpg_af68418337b76130697175d74ee188dfe}{ax}\hypertarget{classCpg_af68418337b76130697175d74ee188dfe}{}\label{classCpg_af68418337b76130697175d74ee188dfe}
+
+\begin{DoxyCompactList}\small\item\em Offset constant. \end{DoxyCompactList}\item 
+float \hyperlink{classCpg_ac401bdb453b48eb16f139c85cf84c50e}{step}\hypertarget{classCpg_ac401bdb453b48eb16f139c85cf84c50e}{}\label{classCpg_ac401bdb453b48eb16f139c85cf84c50e}
+
+\begin{DoxyCompactList}\small\item\em Step used for processing the euler method. \end{DoxyCompactList}\item 
+unsigned \hyperlink{classCpg_a76df223d02d7b73195e9bbf899c18efb}{oscillators}\hypertarget{classCpg_a76df223d02d7b73195e9bbf899c18efb}{}\label{classCpg_a76df223d02d7b73195e9bbf899c18efb}
+
+\begin{DoxyCompactList}\small\item\em Number of oscillators used. \end{DoxyCompactList}\item 
+unsigned \hyperlink{classCpg_ae22d05d6332474232e17951527266c5e}{ti}\hypertarget{classCpg_ae22d05d6332474232e17951527266c5e}{}\label{classCpg_ae22d05d6332474232e17951527266c5e}
+
+\begin{DoxyCompactList}\small\item\em Initial time. \end{DoxyCompactList}\item 
+unsigned \hyperlink{classCpg_ac0c4c837f76afff78feb182fe840d9b2}{tf}\hypertarget{classCpg_ac0c4c837f76afff78feb182fe840d9b2}{}\label{classCpg_ac0c4c837f76afff78feb182fe840d9b2}
+
+\begin{DoxyCompactList}\small\item\em Final time. \end{DoxyCompactList}\item 
+unsigned \hyperlink{classCpg_a5efba1ac4cbe88af80904a7d165f109a}{n}\hypertarget{classCpg_a5efba1ac4cbe88af80904a7d165f109a}{}\label{classCpg_a5efba1ac4cbe88af80904a7d165f109a}
+
+\begin{DoxyCompactList}\small\item\em Time vector size. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Friends}
+\begin{DoxyCompactItemize}
+\item 
+ostream \& \hyperlink{classCpg_ae3aff148754c0919347bdab8801e0d25}{operator$<$$<$} (ostream \&O, const \hyperlink{classCpg}{Cpg} \&cpg)
+\end{DoxyCompactItemize}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\index{Cpg@{Cpg}!Cpg@{Cpg}}
+\index{Cpg@{Cpg}!Cpg@{Cpg}}
+\subsubsection[{\texorpdfstring{Cpg(unsigned const \&oscillators\+M, unsigned const \&ti\+M, unsigned const \&tf\+M, float const \&step\+M, float const RM[], float const XM[])}{Cpg(unsigned const &oscillatorsM, unsigned const &tiM, unsigned const &tfM, float const &stepM, float const RM[], float const XM[])}}]{\setlength{\rightskip}{0pt plus 5cm}Cpg\+::\+Cpg (
+\begin{DoxyParamCaption}
+\item[{unsigned const \&}]{oscillatorsM, }
+\item[{unsigned const \&}]{tiM, }
+\item[{unsigned const \&}]{tfM, }
+\item[{float const \&}]{stepM, }
+\item[{float const}]{RM\mbox{[}$\,$\mbox{]}, }
+\item[{float const}]{XM\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)}\hypertarget{classCpg_aa4f2d1746f254898df3343de7827994c}{}\label{classCpg_aa4f2d1746f254898df3343de7827994c}
+Standard constructor of the class from parameters. 
+\begin{DoxyParams}{Parameters}
+{\em oscillatorsM} & Number of oscillators desired. \\
+\hline
+{\em tiM} & Initial time. \\
+\hline
+{\em tfM} & Final time. \\
+\hline
+{\em stepM} & Accuracy required. \\
+\hline
+{\em RM} & Vector of maximum aplitudes. \\
+\hline
+{\em XM} & Vector of maximum offset. \\
+\hline
+\end{DoxyParams}
+\index{Cpg@{Cpg}!Cpg@{Cpg}}
+\index{Cpg@{Cpg}!Cpg@{Cpg}}
+\subsubsection[{\texorpdfstring{Cpg()}{Cpg()}}]{\setlength{\rightskip}{0pt plus 5cm}Cpg\+::\+Cpg (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classCpg_a63ca031bf2884942657658668fc10afa}{}\label{classCpg_a63ca031bf2884942657658668fc10afa}
+Standard constructor of the class without parameters. \index{Cpg@{Cpg}!````~Cpg@{$\sim$\+Cpg}}
+\index{````~Cpg@{$\sim$\+Cpg}!Cpg@{Cpg}}
+\subsubsection[{\texorpdfstring{$\sim$\+Cpg()}{~Cpg()}}]{\setlength{\rightskip}{0pt plus 5cm}Cpg\+::$\sim$\+Cpg (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classCpg_a35060a1599a9ef8b8e1d693d6ccc57b5}{}\label{classCpg_a35060a1599a9ef8b8e1d693d6ccc57b5}
+Standard class destructor. 
+
+\subsection{Member Function Documentation}
+\index{Cpg@{Cpg}!createW@{createW}}
+\index{createW@{createW}!Cpg@{Cpg}}
+\subsubsection[{\texorpdfstring{create\+W(float const \&frequencia)}{createW(float const &frequencia)}}]{\setlength{\rightskip}{0pt plus 5cm}float $\ast$ Cpg\+::createW (
+\begin{DoxyParamCaption}
+\item[{float const \&}]{frequencia}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classCpg_a79402424076964ff90210050e79a35e7}{}\label{classCpg_a79402424076964ff90210050e79a35e7}
+
+\begin{DoxyParams}{Parameters}
+{\em frequencia} & Frequency set for oscillators. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Pointer to array of frequency matrix. 
+\end{DoxyReturn}
+\index{Cpg@{Cpg}!criar@{criar}}
+\index{criar@{criar}!Cpg@{Cpg}}
+\subsubsection[{\texorpdfstring{criar(unsigned const \&oscillators\+M, unsigned const \&ti\+M, unsigned const \&tf\+M, float const \&step\+M, float const RM[], float const XM[])}{criar(unsigned const &oscillatorsM, unsigned const &tiM, unsigned const &tfM, float const &stepM, float const RM[], float const XM[])}}]{\setlength{\rightskip}{0pt plus 5cm}void Cpg\+::criar (
+\begin{DoxyParamCaption}
+\item[{unsigned const \&}]{oscillatorsM, }
+\item[{unsigned const \&}]{tiM, }
+\item[{unsigned const \&}]{tfM, }
+\item[{float const \&}]{stepM, }
+\item[{float const}]{RM\mbox{[}$\,$\mbox{]}, }
+\item[{float const}]{XM\mbox{[}$\,$\mbox{]}}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classCpg_ad35216294fb2aa04bf75b7cc3628c35a}{}\label{classCpg_ad35216294fb2aa04bf75b7cc3628c35a}
+Method used by the default constructor (with parameters) of the class to start the parameters and pointers. 
+\begin{DoxyParams}{Parameters}
+{\em oscillatorsM} & Number of oscillators desired. \\
+\hline
+{\em tiM} & Initial time. \\
+\hline
+{\em tfM} & Final time. \\
+\hline
+{\em stepM} & Accuracy required. \\
+\hline
+{\em RM} & Vector of maximum aplitudes. \\
+\hline
+{\em XM} & Vector of maximum offset. \\
+\hline
+\end{DoxyParams}
+\index{Cpg@{Cpg}!generate\+Vector\+Time@{generate\+Vector\+Time}}
+\index{generate\+Vector\+Time@{generate\+Vector\+Time}!Cpg@{Cpg}}
+\subsubsection[{\texorpdfstring{generate\+Vector\+Time(unsigned const \&ti, unsigned const \&tf, float const \&step)}{generateVectorTime(unsigned const &ti, unsigned const &tf, float const &step)}}]{\setlength{\rightskip}{0pt plus 5cm}float $\ast$ Cpg\+::generate\+Vector\+Time (
+\begin{DoxyParamCaption}
+\item[{unsigned const \&}]{ti, }
+\item[{unsigned const \&}]{tf, }
+\item[{float const \&}]{step}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classCpg_adeeac0f667c5175da03bb2dce6efad68}{}\label{classCpg_adeeac0f667c5175da03bb2dce6efad68}
+
+\begin{DoxyParams}{Parameters}
+{\em ti} & Initial time. \\
+\hline
+{\em tf} & Final time. \\
+\hline
+{\em step} & Accuracy required. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Point to array of time. 
+\end{DoxyReturn}
+\index{Cpg@{Cpg}!get\+Ar@{get\+Ar}}
+\index{get\+Ar@{get\+Ar}!Cpg@{Cpg}}
+\subsubsection[{\texorpdfstring{get\+Ar() const }{getAr() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Cpg\+::get\+Ar (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classCpg_ae1dabd4cdf93e6b33194c8a72684cb4c}{}\label{classCpg_ae1dabd4cdf93e6b33194c8a72684cb4c}
+Method to obtain the air amplitude constant. \begin{DoxyReturn}{Returns}
+Returns the air amplitude constant. 
+\end{DoxyReturn}
+\index{Cpg@{Cpg}!get\+Ax@{get\+Ax}}
+\index{get\+Ax@{get\+Ax}!Cpg@{Cpg}}
+\subsubsection[{\texorpdfstring{get\+Ax() const }{getAx() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Cpg\+::get\+Ax (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classCpg_a47946da3dd0c6bfb4f893b229aae6f4a}{}\label{classCpg_a47946da3dd0c6bfb4f893b229aae6f4a}
+Method to obtain the air offset constant. \begin{DoxyReturn}{Returns}
+Returns the air offset constant. 
+\end{DoxyReturn}
+\index{Cpg@{Cpg}!getN@{getN}}
+\index{getN@{getN}!Cpg@{Cpg}}
+\subsubsection[{\texorpdfstring{get\+N() const }{getN() const }}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Cpg\+::getN (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classCpg_a6d507c49072684060bc8250f3b2138db}{}\label{classCpg_a6d507c49072684060bc8250f3b2138db}
+Method to obtain the size of vector time. \begin{DoxyReturn}{Returns}
+Size of vector time. 
+\end{DoxyReturn}
+\index{Cpg@{Cpg}!getoscillators@{getoscillators}}
+\index{getoscillators@{getoscillators}!Cpg@{Cpg}}
+\subsubsection[{\texorpdfstring{getoscillators() const }{getoscillators() const }}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Cpg\+::getoscillators (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classCpg_aa49b5de07bb98b1532e0260c6d8c1e74}{}\label{classCpg_aa49b5de07bb98b1532e0260c6d8c1e74}
+Method to obtain the oscillators. \begin{DoxyReturn}{Returns}
+This method return the numbers of oscillators. 
+\end{DoxyReturn}
+\index{Cpg@{Cpg}!get\+Phi@{get\+Phi}}
+\index{get\+Phi@{get\+Phi}!Cpg@{Cpg}}
+\subsubsection[{\texorpdfstring{get\+Phi() const }{getPhi() const }}]{\setlength{\rightskip}{0pt plus 5cm}void Cpg\+::get\+Phi (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classCpg_ad95a497c054cb1b590d11c37ac5e4587}{}\label{classCpg_ad95a497c054cb1b590d11c37ac5e4587}
+Method for printing the matrix phi. \index{Cpg@{Cpg}!get\+Step@{get\+Step}}
+\index{get\+Step@{get\+Step}!Cpg@{Cpg}}
+\subsubsection[{\texorpdfstring{get\+Step() const }{getStep() const }}]{\setlength{\rightskip}{0pt plus 5cm}float Cpg\+::get\+Step (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classCpg_a0a9ac8b5a332b4aed76fbd72366568e2}{}\label{classCpg_a0a9ac8b5a332b4aed76fbd72366568e2}
+Method to obtain the Acuracy. \begin{DoxyReturn}{Returns}
+Acuracy. 
+\end{DoxyReturn}
+\index{Cpg@{Cpg}!get\+Tf@{get\+Tf}}
+\index{get\+Tf@{get\+Tf}!Cpg@{Cpg}}
+\subsubsection[{\texorpdfstring{get\+Tf() const }{getTf() const }}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Cpg\+::get\+Tf (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classCpg_a40c6404103f6cb39f29242bab0aa5df4}{}\label{classCpg_a40c6404103f6cb39f29242bab0aa5df4}
+Method to obtain the final time. \begin{DoxyReturn}{Returns}
+Final time. 
+\end{DoxyReturn}
+\index{Cpg@{Cpg}!get\+Ti@{get\+Ti}}
+\index{get\+Ti@{get\+Ti}!Cpg@{Cpg}}
+\subsubsection[{\texorpdfstring{get\+Ti() const }{getTi() const }}]{\setlength{\rightskip}{0pt plus 5cm}unsigned Cpg\+::get\+Ti (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classCpg_a63d0ff3b0257b961f3eb7b0ca1c6b737}{}\label{classCpg_a63d0ff3b0257b961f3eb7b0ca1c6b737}
+Method to obtain the time initial. \begin{DoxyReturn}{Returns}
+Initial time. 
+\end{DoxyReturn}
+\index{Cpg@{Cpg}!get\+Wij@{get\+Wij}}
+\index{get\+Wij@{get\+Wij}!Cpg@{Cpg}}
+\subsubsection[{\texorpdfstring{get\+Wij() const }{getWij() const }}]{\setlength{\rightskip}{0pt plus 5cm}void Cpg\+::get\+Wij (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+) const}\hypertarget{classCpg_a35bdba315defd8c291c4c9cc03a170de}{}\label{classCpg_a35bdba315defd8c291c4c9cc03a170de}
+Method for printing the matrix wij. \index{Cpg@{Cpg}!process\+Cpg@{process\+Cpg}}
+\index{process\+Cpg@{process\+Cpg}!Cpg@{Cpg}}
+\subsubsection[{\texorpdfstring{process\+Cpg()}{processCpg()}}]{\setlength{\rightskip}{0pt plus 5cm}void Cpg\+::process\+Cpg (
+\begin{DoxyParamCaption}
+{}
+\end{DoxyParamCaption}
+)}\hypertarget{classCpg_ad3bac9ebe928c26c6beb6a4084585dc1}{}\label{classCpg_ad3bac9ebe928c26c6beb6a4084585dc1}
+Method for performing the cpg processing. \index{Cpg@{Cpg}!save\+Amplitude@{save\+Amplitude}}
+\index{save\+Amplitude@{save\+Amplitude}!Cpg@{Cpg}}
+\subsubsection[{\texorpdfstring{save\+Amplitude(string const \&name)}{saveAmplitude(string const &name)}}]{\setlength{\rightskip}{0pt plus 5cm}void Cpg\+::save\+Amplitude (
+\begin{DoxyParamCaption}
+\item[{string const \&}]{name}
+\end{DoxyParamCaption}
+)}\hypertarget{classCpg_aec2020a46294886424682957f2d441a1}{}\label{classCpg_aec2020a46294886424682957f2d441a1}
+Method to save the matrix of Amplitudes. 
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the file that will be saved in the directory. \\
+\hline
+\end{DoxyParams}
+\index{Cpg@{Cpg}!save\+Cpg@{save\+Cpg}}
+\index{save\+Cpg@{save\+Cpg}!Cpg@{Cpg}}
+\subsubsection[{\texorpdfstring{save\+Cpg(string const \&name)}{saveCpg(string const &name)}}]{\setlength{\rightskip}{0pt plus 5cm}void Cpg\+::save\+Cpg (
+\begin{DoxyParamCaption}
+\item[{string const \&}]{name}
+\end{DoxyParamCaption}
+)}\hypertarget{classCpg_abd793d8f3c4ea00d3b6580ff9c2ee7d9}{}\label{classCpg_abd793d8f3c4ea00d3b6580ff9c2ee7d9}
+Method to save the angles of the processing of the cpg. 
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the file that will be saved in the directory. \\
+\hline
+\end{DoxyParams}
+\index{Cpg@{Cpg}!save\+FI@{save\+FI}}
+\index{save\+FI@{save\+FI}!Cpg@{Cpg}}
+\subsubsection[{\texorpdfstring{save\+F\+I(string const \&name)}{saveFI(string const &name)}}]{\setlength{\rightskip}{0pt plus 5cm}void Cpg\+::save\+FI (
+\begin{DoxyParamCaption}
+\item[{string const \&}]{name}
+\end{DoxyParamCaption}
+)}\hypertarget{classCpg_a572a47185ab8bbcbc241d7631ce73212}{}\label{classCpg_a572a47185ab8bbcbc241d7631ce73212}
+Method to save the matrix of FI.. 
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the file that will be saved in the directory. \\
+\hline
+\end{DoxyParams}
+\index{Cpg@{Cpg}!save\+Offset@{save\+Offset}}
+\index{save\+Offset@{save\+Offset}!Cpg@{Cpg}}
+\subsubsection[{\texorpdfstring{save\+Offset(string const \&name)}{saveOffset(string const &name)}}]{\setlength{\rightskip}{0pt plus 5cm}void Cpg\+::save\+Offset (
+\begin{DoxyParamCaption}
+\item[{string const \&}]{name}
+\end{DoxyParamCaption}
+)}\hypertarget{classCpg_acebfbe4919359a28df5477fd431306bc}{}\label{classCpg_acebfbe4919359a28df5477fd431306bc}
+Method to save the matrix of offsets. 
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the file that will be saved in the directory. \\
+\hline
+\end{DoxyParams}
+\index{Cpg@{Cpg}!save\+Vector\+Time@{save\+Vector\+Time}}
+\index{save\+Vector\+Time@{save\+Vector\+Time}!Cpg@{Cpg}}
+\subsubsection[{\texorpdfstring{save\+Vector\+Time(string const \&name)}{saveVectorTime(string const &name)}}]{\setlength{\rightskip}{0pt plus 5cm}void Cpg\+::save\+Vector\+Time (
+\begin{DoxyParamCaption}
+\item[{string const \&}]{name}
+\end{DoxyParamCaption}
+)}\hypertarget{classCpg_a96a93c0107065678c2de6486136f9cf8}{}\label{classCpg_a96a93c0107065678c2de6486136f9cf8}
+Method to save the vector of times. 
+\begin{DoxyParams}{Parameters}
+{\em name} & Name of the file that will be saved in the directory. \\
+\hline
+\end{DoxyParams}
+\index{Cpg@{Cpg}!set\+Ar@{set\+Ar}}
+\index{set\+Ar@{set\+Ar}!Cpg@{Cpg}}
+\subsubsection[{\texorpdfstring{set\+Ar(float const \&value)}{setAr(float const &value)}}]{\setlength{\rightskip}{0pt plus 5cm}void Cpg\+::set\+Ar (
+\begin{DoxyParamCaption}
+\item[{float const \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classCpg_a80c39262bf404f7137b159ad49e1b54f}{}\label{classCpg_a80c39262bf404f7137b159ad49e1b54f}
+Method for setting the value of the ar amplitude constant 
+\begin{DoxyParams}{Parameters}
+{\em value} & Value to be set in Ar amplitude constant \\
+\hline
+\end{DoxyParams}
+\index{Cpg@{Cpg}!set\+Ax@{set\+Ax}}
+\index{set\+Ax@{set\+Ax}!Cpg@{Cpg}}
+\subsubsection[{\texorpdfstring{set\+Ax(float const \&value)}{setAx(float const &value)}}]{\setlength{\rightskip}{0pt plus 5cm}void Cpg\+::set\+Ax (
+\begin{DoxyParamCaption}
+\item[{float const \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classCpg_add9ec0364bbe3958d7eac5d059985d9c}{}\label{classCpg_add9ec0364bbe3958d7eac5d059985d9c}
+Method for setting the value of the ax offset constant 
+\begin{DoxyParams}{Parameters}
+{\em value} & Value to be set in Ax offset constant \\
+\hline
+\end{DoxyParams}
+\index{Cpg@{Cpg}!set\+Phi@{set\+Phi}}
+\index{set\+Phi@{set\+Phi}!Cpg@{Cpg}}
+\subsubsection[{\texorpdfstring{set\+Phi(unsigned const \&l, unsigned const \&c, float const \&value)}{setPhi(unsigned const &l, unsigned const &c, float const &value)}}]{\setlength{\rightskip}{0pt plus 5cm}void Cpg\+::set\+Phi (
+\begin{DoxyParamCaption}
+\item[{unsigned const \&}]{l, }
+\item[{unsigned const \&}]{c, }
+\item[{float const \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classCpg_a0f5050bebc6051e40de3c4ac5dd1932a}{}\label{classCpg_a0f5050bebc6051e40de3c4ac5dd1932a}
+Method for setting parameters of the Phi matrix. 
+\begin{DoxyParams}{Parameters}
+{\em l} & Phi array line. \\
+\hline
+{\em c} & phi matrix column. \\
+\hline
+{\em value} & Value to be set in phi array. \\
+\hline
+\end{DoxyParams}
+\index{Cpg@{Cpg}!set\+Wij@{set\+Wij}}
+\index{set\+Wij@{set\+Wij}!Cpg@{Cpg}}
+\subsubsection[{\texorpdfstring{set\+Wij(unsigned const \&l, unsigned const \&c, float const \&value)}{setWij(unsigned const &l, unsigned const &c, float const &value)}}]{\setlength{\rightskip}{0pt plus 5cm}void Cpg\+::set\+Wij (
+\begin{DoxyParamCaption}
+\item[{unsigned const \&}]{l, }
+\item[{unsigned const \&}]{c, }
+\item[{float const \&}]{value}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [inline]}}\hypertarget{classCpg_a2c2651f04fa5d819fa5e7bebc42047e6}{}\label{classCpg_a2c2651f04fa5d819fa5e7bebc42047e6}
+Method for setting parameters of the Wij matrix. 
+\begin{DoxyParams}{Parameters}
+{\em l} & Wij array line. \\
+\hline
+{\em c} & Wij matrix column. \\
+\hline
+{\em value} & Value to be set in Wij array. \\
+\hline
+\end{DoxyParams}
+\index{Cpg@{Cpg}!zeros@{zeros}}
+\index{zeros@{zeros}!Cpg@{Cpg}}
+\subsubsection[{\texorpdfstring{zeros(unsigned const \&l, unsigned const \&c, float $\ast$$\ast$\+Matriz)}{zeros(unsigned const &l, unsigned const &c, float **Matriz)}}]{\setlength{\rightskip}{0pt plus 5cm}float $\ast$$\ast$ Cpg\+::zeros (
+\begin{DoxyParamCaption}
+\item[{unsigned const \&}]{l, }
+\item[{unsigned const \&}]{c, }
+\item[{float $\ast$$\ast$}]{Matriz}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [private]}}\hypertarget{classCpg_a4584d250ed6e8beace3ada7c0a28455a}{}\label{classCpg_a4584d250ed6e8beace3ada7c0a28455a}
+Method for creating arrays from pointers passed as parameters. 
+\begin{DoxyParams}{Parameters}
+{\em l} & Number of rows of array to be processed. \\
+\hline
+{\em c} & Number of columns of the array to be processed. \\
+\hline
+{\em Matriz} & Pointer to be processed. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Point of Pointer to array filled with zeros from the initial pointer passed as a parameter. 
+\end{DoxyReturn}
+
+
+\subsection{Friends And Related Function Documentation}
+\index{Cpg@{Cpg}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!Cpg@{Cpg}}
+\subsubsection[{\texorpdfstring{operator$<$$<$}{operator<<}}]{\setlength{\rightskip}{0pt plus 5cm}ostream\& operator$<$$<$ (
+\begin{DoxyParamCaption}
+\item[{ostream \&}]{O, }
+\item[{const {\bf Cpg} \&}]{cpg}
+\end{DoxyParamCaption}
+)\hspace{0.3cm}{\ttfamily [friend]}}\hypertarget{classCpg_ae3aff148754c0919347bdab8801e0d25}{}\label{classCpg_ae3aff148754c0919347bdab8801e0d25}
+Method to overload the \char`\"{}$<$$<$\char`\"{} operator. 
+\begin{DoxyParams}{Parameters}
+{\em O} & Parameter of ostream \\
+\hline
+{\em cpg} & \hyperlink{classCpg}{Cpg} object. \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+Parameter of ostream 
+\end{DoxyReturn}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+Cpg.\+h\item 
+Cpg.\+cpp\end{DoxyCompactItemize}
