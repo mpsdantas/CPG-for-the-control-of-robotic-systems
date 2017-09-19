@@ -1,19 +1,19 @@
 tInicio = 0;  // tempo de incio da simulação 
-tFim = 25; // tempo final da simulação 
-osciladores = 3; // número de osciladores 
+tFim = 40; // tempo final da simulação 
+osciladores = 8; // número de osciladores 
 passo = 0.01; // intervalo de tempo entre cada interação da simulação 
 
 t = tInicio:passo:tFim 
 n = length(t);
 
 
-R  = [0.40944 0.29132 0.29132];
+R  = [0.2 0.2 0.29132 0.2 0.2 0.2 0.2 0.2];
 global r;
 r = zeros(n,osciladores);
 global m;
 m  = zeros(n,osciladores);
 global X;
-X  = [0.0 0.0 0.0];
+X  = [0.0 0.0 0.0 0.0 0.0 0.0 0.0 0.0];
 global x;
 x = zeros(n,osciladores);
 global exe; 
@@ -24,9 +24,9 @@ global tetha;
 tetha = zeros(n,osciladores);
 ar = 2;
 ax = 2;
-w  = [10 10 10]
-wij= [0 0 0;0.5 0 0;0.5 0 0]
-phi = [0 0 0;3.14/2 0 0;-3.14/2 0 0] // Matriz do deslocamento, exemplo se tivermos 12 osciladores teremos que ter 12 linhas e 12 colunas, 6, 6 linhas e 6 colunas.
+w  = [10 10 10 10 10 10 10 10]
+wij= [0 0.5 0 0 0 0 0 0;0 0 0.5 0 0 0 0 0;0 0 0 0.5 0 0 0 0;0.5 0 0 0 0 0 0 0; 0 0 0 0 0 0.5 0 05; 0 0 0 0 0.5 0 0.5 0; 0 0 0 0 0 0.5 0 0.5; 0 0 0 0 0.5 0 0.5 0];
+phi = [0 %pi/2 0 0 0 0 0 0;0 0 %pi/2 0 0 0 0 0;0 0 0 %pi/2 0 0 0 0; %pi/2 0 0 0 0 0 0 0; 0 0 0 0 0 %pi/2 0 %pi/2; 0 0 0 0 %pi/2 0 %pi/2 0; 0 0 0 0 0 %pi/2 0 %pi/2; 0 0 0 0 %pi/2 0 %pi/2 0] // Matriz do deslocamento, exemplo se tivermos 12 osciladores teremos que ter 12 linhas e 12 colunas, 6, 6 linhas e 6 colunas.
 
 
 //A seguinte função recebe uma matriz dr 1xn.

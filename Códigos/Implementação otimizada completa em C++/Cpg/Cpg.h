@@ -121,6 +121,10 @@ public:
      */
     inline unsigned getoscillators() const{return oscillators;}
     /**
+     * Method to return W.
+     */
+    inline void getW()const{for(unsigned i=0;i<oscillators;i++) cout << " " << w[i];}
+    /**
      * Method to obtain the time initial.
      * @return Initial time.
      */
@@ -160,6 +164,12 @@ public:
      * @param value Value to be set in Ax offset constant
      */
     inline void setAx(float const &value){ax = value;}
+    /**
+     * Method for set W
+     * @param pos position of vector
+     * @param valor valor of position vector.
+     */
+    inline void setW(unsigned pos, float valor){w[pos]=valor;}
     /**
      * Method for performing the cpg processing.
      */

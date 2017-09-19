@@ -6,7 +6,7 @@
 
 #IncludeRegexTransform: 
 
-/home/marcus/Documentos/Pesquisa/cpg/Implementação otimizada completa em C++/Cpg/Cpg.cpp
+/home/marcus/Documentos/Pesquisa/cpg/Códigos/Implementação otimizada completa em C++/Cpg/Cpg.cpp
 iostream
 -
 cmath
@@ -14,13 +14,13 @@ cmath
 fstream
 -
 Cpg.h
-/home/marcus/Documentos/Pesquisa/cpg/Implementação otimizada completa em C++/Cpg/Cpg.h
+/home/marcus/Documentos/Pesquisa/cpg/Códigos/Implementação otimizada completa em C++/Cpg/Cpg.h
 
-/home/marcus/Documentos/Pesquisa/cpg/Implementação otimizada completa em C++/Cpg/Cpg.h
+/home/marcus/Documentos/Pesquisa/cpg/Códigos/Implementação otimizada completa em C++/Cpg/Cpg.h
 
-/home/marcus/Documentos/Pesquisa/cpg/Implementação otimizada completa em C++/Cpg/main.cpp
+/home/marcus/Documentos/Pesquisa/cpg/Códigos/Implementação otimizada completa em C++/Cpg/main.cpp
 iostream
 -
 Cpg.h
-/home/marcus/Documentos/Pesquisa/cpg/Implementação otimizada completa em C++/Cpg/Cpg.h
+/home/marcus/Documentos/Pesquisa/cpg/Códigos/Implementação otimizada completa em C++/Cpg/Cpg.h
 

@@ -1,4 +1,4 @@
-# Install script for directory: /home/marcus/Documentos/Pesquisa/cpg/Implementação otimizada completa em C++/Cpg
+# Install script for directory: /home/marcus/Documentos/Pesquisa/cpg/Códigos/Implementação otimizada completa em C++/Cpg
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -40,5 +40,5 @@ endif()
 
 string(REPLACE ";" "\n" CMAKE_INSTALL_MANIFEST_CONTENT
        "${CMAKE_INSTALL_MANIFEST_FILES}")
-file(WRITE "/home/marcus/Documentos/Pesquisa/cpg/Implementação otimizada completa em C++/Cpg/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
+file(WRITE "/home/marcus/Documentos/Pesquisa/cpg/Códigos/Implementação otimizada completa em C++/Cpg/cmake-build-debug/${CMAKE_INSTALL_MANIFEST}"
      "${CMAKE_INSTALL_MANIFEST_CONTENT}")
